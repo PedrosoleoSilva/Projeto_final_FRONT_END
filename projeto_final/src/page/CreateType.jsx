@@ -8,11 +8,12 @@ const CreateType = () => {
   const [pokeData, setPokeData] = useState([])
   const [loading, setLoading] = useState(false)
 
- 
-
-  const fetchUserData = useCallback(async() => {
+    
+  const fetchUserData = useCallback(async() => {    
     try {
         setLoading(true)
+        const res = await axios.get('https://pokeapi.co/api/v2/pokemon/')
+        setPokeData(res.data.sprites)
         const response = await axios.get('https://pokeapi.co/api/v2/pokemon?limit=20')
         setPokeData(response.data.results)  //dentro da variavel response eu jogo caminho data do array e depois acesso array de results
     } catch (error) {
@@ -33,8 +34,8 @@ const CreateType = () => {
             )
         } 
         return (
-            <div>
-                 <th>LISTAGEM POKÉMON:</th>
+            <div className='formato'>
+                 
                 {pokeData.map(pokemon => (
                     <Card>
                         <div className='card'>
@@ -45,7 +46,7 @@ const CreateType = () => {
                    
                 ))}
                     
-                    <img className='pikachu' src='https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png'></img>
+                  
                 
             </div>
             

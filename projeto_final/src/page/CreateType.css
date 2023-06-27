@@ -15,7 +15,9 @@
         color: black;
         border-style: solid;
         padding: 4px;  
-        
+        display: flex;
+       flex-wrap: wrap;
+        gap: 32px;
        
 }
 
@@ -25,4 +27,11 @@
 }
 .pikachu {
         text-align: right;
+}
+
+.formato {
+        display: flex;
+       flex-wrap: wrap;
+        gap: 32px;
+        
 }
