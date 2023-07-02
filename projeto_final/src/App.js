@@ -3,6 +3,8 @@ import './App.css';
 import CreateType from './page/CreateType';
 import Home from './page/Home';
 import {RouterProvider, createBrowserRouter} from 'react-router-dom'
+import { ChakraProvider } from '@chakra-ui/react';
+
 
 function App() {
    const routes = createBrowserRouter([
@@ -12,16 +14,19 @@ function App() {
     },
     {
       path: '/home',
-      element: <Home/>
+      element:<ChakraProvider><Home/></ChakraProvider> 
     }
    ])
   return (
+    <div > 
+       
+       <RouterProvider router={routes}/> 
      
-    <div className='conatiner'> 
-       <Header/> 
-       <RouterProvider router={routes}/>  
+       <div>
+      
+       </div>
     </div>
-    
+   
   );
 }
 

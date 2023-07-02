@@ -39,3 +39,21 @@
 .button {
         text-align: center;
 }
+.cabecalho {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        background-color: aquamarine;
+        padding: 20px 20px;
+        height: 80px;
+        margin: 0;
+        font-size: 30px;
+        text-align: center;
+    }
+    .img {
+        text-align: center;
+    }
+    .home {
+        background-color: rgb(83, 201, 201);
+    }
